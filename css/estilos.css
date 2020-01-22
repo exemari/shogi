@@ -1,0 +1,22 @@
+#tablero td{
+	width: 30px;
+	
+}
+.td_fondo{
+	background-color:#ccc;
+}
+#jugador1{
+	background-color:#eaa1a1;
+}#jugador2{
+	background-color:#adeaa1;
+}
+.promocionada{
+	color:#2048ad;
+	font-weight: bold;
+
+}
+#referencias{
+	font-size:90%;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
