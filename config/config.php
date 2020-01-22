@@ -1,4 +1,5 @@
 <?php
+ini_set("display_errors",0);
 require("config/constant.php");
 require("model/pieza.php");
 require("model/peon.php");

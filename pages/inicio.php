@@ -14,14 +14,14 @@
 	 / L (Lancero) / A (Alfil) / T (Torre) / P (Peon) 
 	</div>
 <!-- Boton para reiniciar-->
-	<? if ($tablero->get_iniciado()){?>
+	<?php if ($tablero->get_iniciado()){?>
 		<form method = "post">
 			<button type="submit" value="reiniciar" name="reiniciar">Reiniciar partida</button>
 		</form>
-	<?}?>
+	<?php } ?>
 <!-- Tablero de juego-->
 	<table  id="tablero" border="1">
-		<? for ($i=0;$i<=$tablero->get_filas();$i++){
+		<?php for ($i=0;$i<=$tablero->get_filas();$i++){
 	 		echo "<tr>";
 			for ($j=0;$j<=$tablero->get_columnas();$j++){
 				$num = "";
@@ -40,10 +40,10 @@
 			echo "</tr>";
 		}?>
 	</table>
-	<h3><?=$mensaje->get_mensaje()?></h3>
+	<h3><?php echo $mensaje->get_mensaje()?></h3>
 
 <!-- Cuando el tablero NO esta iniciado-->	
-	<? if (!$tablero->get_iniciado()){?>
+	<?php if (!$tablero->get_iniciado()){?>
 		<form method = "post" id="FJugadores">
 			<table>
 				<tr>
@@ -60,9 +60,9 @@
 		</form>
 
 <!-- Cuando el tablero esta iniciado-->	
-	<?}elseif(!$tablero->ganador){ ?>
+	<?php }elseif(!$tablero->ganador){ ?>
 
-		Turno actual: <span id="<?=$tablero->get_turno()->nombre;?>"><?=$tablero->get_turno()->get_nombre();?></span>
+		Turno actual: <span id="<?php echo $tablero->get_turno()->nombre;?>"><?php echo $tablero->get_turno()->get_nombre();?></span>
 		
 		<form method="post">
 			<table>
@@ -79,11 +79,11 @@
 					<td><button type="submit" value="reingresar" name="reingresar">Reingresar</button></td>
 					<td><button type="submit" value="promocionar" name="promocionar">Promocionar</button></td>
 				</tr>
-				<? if ($tablero->buscar_tomadas()){?>
+				<?php if ($tablero->buscar_tomadas()){?>
 
-					<tr><td colspan="5"><b>Piezas Tomadas:</b> 	<? echo($tablero->buscar_tomadas())?></td><tr>
+					<tr><td colspan="5"><b>Piezas Tomadas:</b> 	<?php echo($tablero->buscar_tomadas())?></td><tr>
 
-				<?}?>
+				<?php } ?>
 			</table>
 		</form>
 		<span class="aclaraciones">
@@ -94,12 +94,12 @@
 			<i>* Para reingesar una pieza, complete el nombre de la pieza tomada y la posición X e Y en la que quiere ingresarla.</i><br>
 
 		</span>	
-	<?}else{// Hay un ganador?>
-		<h2> Felicitaciones! El ganador es: <?=$tablero->ganador->get_nombre()?><h2>
+	<?php }else{// Hay un ganador?>
+		<h2> Felicitaciones! El ganador es: <?php echo $tablero->ganador->get_nombre()?><h2>
 		<form method = "post">
 			<button type="submit" value="reiniciar" name="reiniciar">Reiniciar partida</button>
 		</form>
-	<?}?>
+	<?php } ?>
 
 </body>
 </html>
