@@ -1,6 +1,7 @@
 <?
 // Controlador que se encarga de manejar todo el flujo de llamados
 session_start();
+require("config/constant.php");
 require("model/pieza.php");
 require("model/peon.php");
 require("model/caballo.php");
@@ -18,7 +19,7 @@ require("model/mensajes.php");
 
 //$_SESSION["tablero"] = null;
 
-$tablero = Tablero::getInstance(9,9);
+$tablero = Tablero::getInstance(C_FILAS,C_COLUMNAS);
 $mensaje=new Mensajes("");
 
 if ($_REQUEST[reiniciar]){ // Reiniciamos la partida

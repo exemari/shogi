@@ -40,9 +40,6 @@
 			echo "</tr>";
 		}?>
 	</table>
-
-	<i>* Solo están implementados los movimientos del Peon</i>
-
 	<h3><?=$mensaje->get_mensaje()?></h3>
 
 <!-- Cuando el tablero NO esta iniciado-->	
@@ -75,9 +72,9 @@
 					<td colspan="3">Y</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="f_pieza"></td>
-					<td><input type="text" name="f_x"></td>
-					<td><input type="text" name="f_y"></td>
+					<td><input type="text" name="f_pieza" required="true"></td>
+					<td><input type="number" name="f_x" ></td>
+					<td><input type="number" name="f_y"></td>
 					<td><button type="submit" value="mover" name="mover">Mover</button></td>
 					<td><button type="submit" value="reingresar" name="reingresar">Reingresar</button></td>
 					<td><button type="submit" value="promocionar" name="promocionar">Promocionar</button></td>
@@ -89,11 +86,20 @@
 				<?}?>
 			</table>
 		</form>
+		<span class="aclaraciones">
+			<h3>Aclaraciones</h3>
+			<i>* Solo están implementados los movimientos del Peon.</i><br>
+			<i>* Para mover, complete el nombre de la pieza, la posicion X y la posición Y.</i><br>
+			<i>* Para promocionar, complete el nombre de la pieza.</i><br>
+			<i>* Para reingesar una pieza, complete el nombre de la pieza tomada y la posición X e Y en la que quiere ingresarla.</i><br>
+
+		</span>	
 	<?}else{// Hay un ganador?>
 		<h2> Felicitaciones! El ganador es: <?=$tablero->ganador->get_nombre()?><h2>
 		<form method = "post">
 			<button type="submit" value="reiniciar" name="reiniciar">Reiniciar partida</button>
 		</form>
 	<?}?>
+
 </body>
 </html>
