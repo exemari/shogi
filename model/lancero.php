@@ -1,4 +1,4 @@
-<?
+<?php
 class Lancero extends Pieza{
 
 

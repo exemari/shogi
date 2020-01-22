@@ -1,4 +1,4 @@
-<?
+<?php
 // Clase encargada de manejar toda la funcionalidad del tablero
 class Tablero{
    
@@ -15,7 +15,7 @@ class Tablero{
     
     private static $instance;
 
-    private function __construct($filas,$columnas)
+    public function __construct($filas,$columnas)
     {
         $this->filas = $filas;
         $this->columnas = $columnas;
@@ -30,7 +30,7 @@ class Tablero{
         if (!self::$instance instanceof self) {
             
             if (!$_SESSION["tablero"]){
-               // var_dump("aca",$_SESSION["tablero"]);
+               
              self::$instance = new self($filas,$columnas);
             }else{
                 self::$instance = unserialize($_SESSION["tablero"]);
@@ -65,9 +65,9 @@ class Tablero{
         for ($i=1;$i<=$this->get_filas();$i++){ // Creamos los peones para el jugador 1
             $pos = $this->get_fila_inicio("Peon",1,$i);
             
-            //var_dump($this->fila_peon_j1);
+            
             $this->piezas[$pos] = $factory->get_pieza("Peon","P1_$i",$this->Jugador1,$i,3);
-            //var_dump($this->piezas[$pos]);
+            
 
         }
         for ($i=1;$i<=$this->get_filas();$i++){ // Creamos los peones para el jugador 2
@@ -75,7 +75,7 @@ class Tablero{
             $pos = $this->get_fila_inicio("Peon",2,$i);
             
             $this->piezas[$pos] = $factory->get_pieza("Peon","P2_$i",$this->Jugador2,$i,7);
-           // var_dump($pieza[$i]);
+          
 
         }
         // Colocamos el Rey para cada jugador
@@ -141,16 +141,16 @@ class Tablero{
     function reiniciar(){
         self::$instance = null;
         $_SESSION["tablero"] = null;
-        //var_dump($_SESSION);
+        
     }
     // Buscamos si no hay una pieza en esa posicions
     function buscar_pieza($x,$y){
-        //var_dump($this->piezas);
+        
         foreach($this->piezas as $p){
             
            $existe = $p->validar_posicion($x,$y); 
            if ($existe){
-               //var_dump($p);
+               
                $class="";
                if ($p->promocionada){
                    $class="promocionada";
@@ -163,13 +163,14 @@ class Tablero{
     }
     //Devolvemos las piezas tomadas por el jugador
     function buscar_tomadas(){
-        //var_dump($this->piezas);
+        
+        $ret="";
         
         foreach($this->piezas as $p){
             
            $existe = $p->tomada; 
            if ($p->tomada && $p->Jugador->get_nombre() == $this->get_turno()->get_nombre()){
-               //var_dump($p);
+               
                $ret .= " $p->nombre ";
            }
 

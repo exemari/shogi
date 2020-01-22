@@ -1,4 +1,4 @@
-<?
+<?php
 // Unica pieza funcional
 class Peon extends Pieza{
      /* Verifica si es un movimiento permitido */
@@ -42,7 +42,6 @@ class Peon extends Pieza{
             }
             $pos_deseada = (($posY-1)*9) + $posX;
             $existe = array_search($pos_deseada, $permitido);
-            var_dump($this->Jugador->nombre,$pos_actual,$pos_deseada,$permitido,$existe);
             if ($existe===false){ // no puede mover aqui
                 return false;
             }

@@ -1,4 +1,4 @@
-<?
+<?php
 class Caballo extends Pieza{
     
 

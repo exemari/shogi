@@ -1,4 +1,4 @@
-<?
+<?php
 class Alfil extends Pieza{
 
     function validar_movimiento($posX,$posY){

@@ -1,4 +1,4 @@
-<?
+<?php
 //Clase encargada de crear todas las piezas.
 class Factory_pieza{
 

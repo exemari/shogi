@@ -1,4 +1,4 @@
-<?
+<?php
 class General_Oro extends Pieza{
     
 

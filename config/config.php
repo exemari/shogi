@@ -1,0 +1,16 @@
+<?php
+require("config/constant.php");
+require("model/pieza.php");
+require("model/peon.php");
+require("model/caballo.php");
+require("model/lancero.php");
+require("model/torre.php");
+require("model/general_oro.php");
+require("model/general_plata.php");
+require("model/rey.php");
+require("model/alfil.php");
+require("model/factory_pieza.php");
+require("model/jugador.php");
+require("model/tablero.php");
+require("model/mensajes.php");
+?>

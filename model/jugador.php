@@ -1,4 +1,4 @@
-<?
+<?php
 // Clase jugador con sus atributos
 class Jugador{
     var $nombre;

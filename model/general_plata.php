@@ -1,4 +1,4 @@
-<?
+<?php
 class General_Plata extends Pieza{
     
 

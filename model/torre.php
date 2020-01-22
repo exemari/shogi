@@ -1,4 +1,4 @@
-<?
+<?php
 class Torre extends Pieza{
     
 

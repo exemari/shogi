@@ -1,4 +1,4 @@
-<?
+<?php
 //Clase que muestra los menssajes
 class Mensajes{
 

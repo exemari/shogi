@@ -1,4 +1,4 @@
-<?
+<?php
 class Rey extends Pieza{
     
     

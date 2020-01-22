@@ -1,4 +1,4 @@
-<?
+<?php
 // Clase Principal de la cual heredan todas las piezas.
 abstract class Pieza{
     var $nombre;
