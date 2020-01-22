@@ -53,7 +53,7 @@
 				</tr>	
 				<tr>
 					<td><input type="text" name="jugador1" id="jugador1" required="true"></td>
-					<td><input type="text" id="jugador2" name="jugador1"  required="true"></td>
+					<td><input type="text" id="jugador2" name="jugador2"  required="true"></td>
 					<td><button type="submit" value="iniciar" name="iniciar"  >Iniciar partida</button></td>
 				</tr>
 			</table>
