@@ -155,7 +155,7 @@ class Tablero{
                if ($p->promocionada){
                    $class="promocionada";
                }
-               return "<span id='".$p->Jugador->nombre."' class='$class'>".$p->nombre."</span>";
+               return "<div id='".$p->Jugador->nombre."' class='$class'>".$p->nombre."</div>";
            }
 
         }
